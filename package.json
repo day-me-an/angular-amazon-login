@@ -1,0 +1,30 @@
+{
+  "name": "angular-amazon-login",
+  "version": "0.0.1",
+  "description": "An angular Provider for the Amazon Login JavaScript SDK",
+  "main": "build/angular-amazon-login.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp-sourcemaps": "~1.1.0",
+    "gulp-coffee": "~2.1.1",
+    "gulp": "~3.8.7",
+    "coffee-script": "~1.7.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/day-me-an/angular-amazon-login.git"
+  },
+  "keywords": [
+    "angular",
+    "amazon",
+    "login"
+  ],
+  "author": "Damian Wood (day-me-an)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/day-me-an/angular-amazon-login/issues"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "angular-amazon-login",
+  "version": "0.0.1",
+  "homepage": "https://github.com/day-me-an/angular-amazon-login",
+  "authors": [
+    "Damian Wood <damian@live.co.uk>"
+  ],
+  "description": "An angular Provider for the Amazon Login JavaScript SDK",
+  "main": "build/angular-amazon-login.js",
+  "keywords": [
+    "amazon",
+    "login",
+    "angular"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.21"
+  }
+}
