@@ -40,6 +40,9 @@ angular.module 'angular-amazon-login', []
 			return self
 
 		setTimeout: (value) ->
+			###
+			Sets the milliseconds it should wait for the API to load.
+			###
 			config.timeout = value
 			return self
 
