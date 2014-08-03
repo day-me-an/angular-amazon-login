@@ -6,7 +6,6 @@ angular.module 'myModule', ['angular-amazon-login']
   .config (AmazonLoginServiceProvider) -> AmazonLoginServiceProvider.setClientId('my api key')
 ```
 
-```
 then use it somewhere:
 
 ```
