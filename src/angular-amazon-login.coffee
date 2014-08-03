@@ -53,7 +53,7 @@ angular.module 'angular-amazon-login', []
 			loadFailureCallback = ->
 				$log.error "Amazon Login JavaScript SDK has not loaded after #{config.timeout}ms"
 				d.reject()
-			loadTimer = $timeout(loadFailureCallback, 5000)
+			loadTimer = $timeout(loadFailureCallback, config.timeout)
 			# resolve to `amazon.Login` once it's loaded
 			$window.onAmazonLoginReady = ->
 				# prevent the loadFailureCallback being triggered
