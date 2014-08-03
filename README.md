@@ -1,26 +1,24 @@
 angular-amazon-login
 ====================
-First add it as a dependency to a module and configure it (shown here in CoffeeScript):
+First add it as a dependency to a module and configure it with your API key:
 ```
 angular.module 'myModule', ['angular-amazon-login']
-  .config (AmazonLoginServiceProvider) -> AmazonLoginServiceProvider.setClientId('my client id')
+  .config (AmazonLoginServiceProvider) -> AmazonLoginServiceProvider.setClientId('my api key')
 ```
 
-or here  in JavaScript:
 ```
-angular.module('myModule', ['angular-amazon-login']).config(function(AmazonLoginServiceProvider) {
-  AmazonLoginServiceProvider.setClientId('my client id');
-});
-```
-then use it somewhere (CoffeeScript):
+then use it somewhere:
 
 ```
-.factory 'MyLoginService', ($q, $log, AmazonLoginService) ->
+.factory 'MyLoginService', ($q, $log, AmazonLogin) ->
 
-	loginViaAmazon:) ->
-		d = $q.defer()
-		AmazonLoginService.then (amazonLogin) -> 
-		  # we can now use amazonLogin
-		  # eg: amazonLogin.authorize(....)
-		return d.promise
+	loginWithAmazon: ->
+		###
+		Triggers the Login with Amazon window to show
+		###
+		AmazonLogin.authorize(scope: 'profile')
+			.then (resp) -> console.log "hello #{resp.profile.name}"
+			# otherwise the promise rejects if the operation failed
+			.catch (error) -> console.log "login failed due to #{error}"
+	
 ```
