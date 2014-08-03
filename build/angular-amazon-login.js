@@ -59,7 +59,7 @@ angular.module('angular-amazon-login', []).provider('AmazonLoginService', functi
           $log.error("Amazon Login JavaScript SDK has not loaded after " + config.timeout + "ms");
           return d.reject();
         };
-        loadTimer = $timeout(loadFailureCallback, 5000);
+        loadTimer = $timeout(loadFailureCallback, config.timeout);
         $window.onAmazonLoginReady = function() {
           $timeout.cancel(loadTimer);
           $window.amazon.Login.setClientId(config.clientId);
@@ -92,3 +92,5 @@ angular.module('angular-amazon-login', []).provider('AmazonLoginService', functi
     };
   }
 ]);
+
+//# sourceMappingURL=angular-amazon-login.js.map
