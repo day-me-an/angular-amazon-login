@@ -43,6 +43,10 @@ angular.module('angular-amazon-login', []).provider('AmazonLoginService', functi
       return self;
     },
     setTimeout: function(value) {
+
+      /*
+      			Sets the milliseconds it should wait for the API to load.
+       */
       config.timeout = value;
       return self;
     },
@@ -79,7 +83,7 @@ angular.module('angular-amazon-login', []).provider('AmazonLoginService', functi
         d = $q.defer();
         AmazonLoginService.then(function(amazonLogin) {
           return amazonLogin.authorize(options, function(resp) {
-            if (!(resp != null ? resp.success : void 0)) {
+            if (!resp.success) {
               $log.error("amazon.Login.authorize failed due to " + resp.error);
               return d.reject(resp.error);
             } else {
