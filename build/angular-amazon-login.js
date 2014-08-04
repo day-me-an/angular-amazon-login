@@ -83,8 +83,8 @@ angular.module('angular-amazon-login', []).provider('AmazonLoginService', functi
         d = $q.defer();
         AmazonLoginService.then(function(amazonLogin) {
           return amazonLogin.authorize(options, function(resp) {
-            if (!resp.success) {
-              $log.error("amazon.Login.authorize failed due to " + resp.error);
+            if (resp.error) {
+              $log.debug("amazon.Login.authorize() responded with error: " + resp.error);
               return d.reject(resp.error);
             } else {
               return d.resolve(resp);
