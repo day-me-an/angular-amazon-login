@@ -1,13 +1,13 @@
 angular-amazon-login
 ====================
-## Installation
+## Install
 
 Include the JS file located in the `./build` directory or simply use bower:
 
 ```shell
 bower install -S angular-amazon-login
 ```
-## Getting Started
+## Usage
 
 First add it as a dependency to a module and configure it with your API key:
 ```coffeescript
