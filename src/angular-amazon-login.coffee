@@ -75,8 +75,8 @@ angular.module 'angular-amazon-login', []
 	authorize: (options) ->
 		d = $q.defer()
 		AmazonLoginService.then (amazonLogin) -> amazonLogin.authorize options, (resp) ->
-			if not resp.success
-				$log.error "amazon.Login.authorize failed due to #{resp.error}"
+			if resp.error
+				$log.debug "amazon.Login.authorize() responded with error: #{resp.error}"
 				# reject with returned error message
 				d.reject(resp.error)
 			else
