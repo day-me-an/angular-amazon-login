@@ -1,14 +1,23 @@
 angular-amazon-login
 ====================
-First add it as a dependency to a module and configure it with your API key:
+## Installation
+
+Include the JS file located in the `./build` directory or simply use bower:
+
+```shell
+bower install -S angular-amazon-login
 ```
+## Getting Started
+
+First add it as a dependency to a module and configure it with your API key:
+```coffeescript
 angular.module 'myModule', ['angular-amazon-login']
   .config (AmazonLoginServiceProvider) -> AmazonLoginServiceProvider.setClientId('my api key')
 ```
 
 then use it somewhere:
 
-```
+```coffeescript
 .factory 'MyLoginService', ($q, $log, AmazonLogin) ->
 
 	loginWithAmazon: ->
